@@ -6,17 +6,17 @@ class Track extends React.Component {
     return (
       <div className="Track">
         <div className="Track-information">
-          <h3><!-- track name will go here --></h3>
-          <p><!-- track artist will go here--> | <!-- track album will go here --></p>
+          <h3></h3>
+          <p></p>
         </div>
-        <a className="Track-action"><!-- + or - will go here --></a>
+        <a className="Track-action"></a>
       </div>
     )
   }
 }
 
-function renderAction() => {
-  if { ('isRemoval === isRemoval ? isRemoval');
+function renderAction() {
+  if ('isRemoval === isRemoval ? isRemoval') {
   return '-';
   }
   else {
