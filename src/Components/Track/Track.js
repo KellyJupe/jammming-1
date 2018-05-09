@@ -1,7 +1,13 @@
 import React from 'react';
 import './Track.css';
+let isRemoval = true;
 
 class Track extends React.Component {
+
+  constructor(isRemoval){
+    super(isRemoval);
+    isRemoval = true;
+  }
   render() {
     return (
       <div className="Track">
@@ -10,41 +16,25 @@ class Track extends React.Component {
           <p>'Track Artist | Track Album'</p>
         </div>
           <a className="Track-action">
-        //function renderAction() {
-          //const isRemoval = props.isRemoval;
-        // isRemoval = true ? false {
-        //  return '-';
-        //  }
-      //    return '+';
-      //  }
-        renderAction() {
-          if (isRemoval) = true {
-            return '-';
-          }
-          else {
-            return '+';
-          }
-        }
 
-        </a>
+
+      </a>
       </div>
-    )
+    );
+  }
+
+  renderAction()
+  {
+
+    if (isRemoval) {
+      return <span>-</span>;
+    } else {
+      return <span>+</span>;
+    }
   }
 }
 
-/*class Track-action extends React.Component {
-  render() {
 
-  }
-}
 
-function renderAction() {
-  if ('isRemoval === isRemoval ? isRemoval') {
-  return '-';
-  }
-  else {
-    return '+';
-  }
-}*/
 
 export default Track;
