@@ -9,7 +9,7 @@ class App extends React {
   constructor(props) {
     super(props);
 this.state = {
-  searchResults: [this.name, this.artist, this.album, this.id],
+  searchResults: [],
   playlistName: '',
   playlistTracks: []
 };
@@ -67,9 +67,14 @@ addTrack(track) {
       <div>
   <h1>Ja<span className="highlight">mmm</span>ing</h1>
   <div className="App">
-
+  <SearchBar onSearch={this.search} />
     <div className="App-playlist">
-
+    <SearchResults searchResults={this.state.searchResults}
+                      onAdd={this.addTrack} />
+      <Playlist playlistTracks={this.state.playlistTracks}
+                      onRemove={this.removeTrack}
+                      onNameChange={this.updatePlaylistName}
+                      onSave={this.savePlaylist} />
     </div>
   </div>
 </div>

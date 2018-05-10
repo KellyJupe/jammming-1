@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './TrackList.css';
-import '../Track/Track';
+import Track from '../Track/Track';
 
-class TrackList extends Component {
+class TrackList extends React {
   render() {
     return (
       <div className="TrackList"> {

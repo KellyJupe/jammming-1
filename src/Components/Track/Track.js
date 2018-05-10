@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import './Track.css';
 
 
-class Track extends Component {
+class Track extends React {
   constructor(props) {
     super(props);
     this.addTrack = this.addTrack.bind(this);
     this.removeTrack = this.removeTrack.bind(this);
-  }
+  };
 
 addTrack(event) {
   console.log(`This track is being added: ${this.props.track.id}`);
@@ -23,9 +23,9 @@ renderAction()
 {
 
   if (this.props.isRemoval) {
-    return (<a className="Track-action" onClick={this.removeTrack}> - </a>);
+    return (<a className="Track-action" onClick={this.removeTrack}>-</a>)
   }
-    return (<a className="Track-action" onClick={this.removeTrack}> + </a>);
+    return (<a className="Track-action" onClick={this.addTrack}>+</a>)
   }
 
 

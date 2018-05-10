@@ -3,7 +3,6 @@ import './SearchResults.css';
 import TrackList from '../TrackList/TrackList';
 
 class SearchResults extends React {
-
   render () {
     return (
     <div className="SearchResults">
