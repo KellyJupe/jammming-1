@@ -5,7 +5,7 @@ import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import Spotify from '../../util/Spotify';
 
-class App extends React {
+class App extends Component {
   constructor(props) {
     super(props);
 this.state = {

@@ -2,6 +2,12 @@ const clientId = 'c22111d5e42f4810984fe5712201496d'; // Your client id
 const redirectUri = 'http://localhost:3000/callback'; // Your redirect uri
 let accessToken;
 
+
+/**
+ * Generates a random string containing numbers and letters
+ * @param  {number} length The length of the string
+ * @return {string} The generated string
+ */
 const generateRandomString = (length) => {
   let text = '';
   const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -13,11 +19,17 @@ const generateRandomString = (length) => {
 };
 
 
+
+
 export const Spotify={
 
 	getAccessToken(){
 		console.log(`Entering SPOTIFY.JS getAccessToken `)
 
+		//if (accessToken){
+		//	console.log(`YES, there is accesToken : ${accessToken}`);
+		//	return accessToken;
+		//}
 
 		console.log('there is NOT accesToken');
 		const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
@@ -37,7 +49,7 @@ export const Spotify={
         	window.history.pushState('Access Token', null, '/'); // This clears the parameters, allowing us to grab a new access token when it expires.
         	return accessToken;
 		} else {
-
+			//const accessUrl = `https://cors-anywhere.herokuapp.com/https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`;
 	      	let accessUrl = 'https://accounts.spotify.com/authorize';
 	            accessUrl += '?response_type=token';
 	            accessUrl += '&client_id=' + encodeURIComponent(clientId);
@@ -64,6 +76,7 @@ export const Spotify={
 		console.log('Entering SPOTIFY.JS search')
 		Spotify.getAccessToken()
 		console.log('continuiing in Search with accessToken...: ');
+		//console.log('expires_in', expires_in);
 		console.log('SPOTIFY.Search() ...term.....', term);
 		return fetch('https://api.spotify.com/v1/search?&q=' + term + '&type=track&limit=10',{
 			method: 'GET',
